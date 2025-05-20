@@ -1,0 +1,178 @@
+/* App Store Styles */
+
+
+h2{
+  font-family: 'Glitch';
+}
+
+.apps-container {
+  font-family: 'Orbitron', sans-serif;
+  background: transparent;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  /* No flex/grid here to ensure centering */
+  padding: 2rem;
+}
+
+.app-search-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.app-search-input {
+  width: 60%;
+  padding: 0.8rem 1.2rem;
+  border-radius: 2rem;
+  border: none;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-size: 1.1rem;
+  outline: none;
+  box-shadow: 0 0 4px #00ffe7;
+  letter-spacing: 1px;
+  transition: box-shadow 0.2s;
+}
+
+.app-suggestions-dropdown {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  background:transparent;
+  backdrop-filter: blur(19px);
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 0 1px #00ffe7;
+  z-index: 10;
+  color: #fff;
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+
+.app-suggestion-item {
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  background: transparent;
+  font-weight: 500;
+  font-size: 1.08rem;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #00ffe733;
+}
+.app-suggestion-item:last-child {
+  border-bottom: none;
+}
+.app-suggestion-item:hover {
+  background: rgba(0,255,231,0.08);
+}
+
+.app-section {
+  margin-bottom: 3.5rem;
+}
+
+.app-section-title {
+  color: #00ffe7;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-decoration: 2px underline;
+  text-underline-offset: 0.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.app-scroll-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  overflow-x: auto;
+  margin-left: 3rem;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.app-scroll-row::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
+
+.app-card {
+  position: relative;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 1.5rem;
+  box-shadow: 0 0 6px #00ffe7, 0 2px 24px #000;
+  padding: 0;
+  max-width: 260px;
+  min-width: 220px;
+  flex: 0 0 220px;
+  height: 19rem;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  overflow: visible;
+  margin-bottom: 1.2rem;
+}
+
+.app-card-icon-container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+}
+
+.app-card-icon {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 1.2rem 1.2rem 0 0;
+}
+
+.app-card-name {
+  width: 100%;
+  text-align: center;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 0.001rem;
+  margin-bottom: 0.7rem;
+}
+
+.app-card-install-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid #00ffe7;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.6rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.app-card-install-btn:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+/* Additions for search result and section wrappers */
+.app-search-result-section {
+  margin-bottom: 3.5rem;
+}

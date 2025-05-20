@@ -1,0 +1,122 @@
+body {
+  background: #000;
+}
+
+.project-banner {
+  width: 90vw;
+  max-width: 1200px;
+  height: 24rem;
+  margin: 2.5rem auto 2rem auto;
+  background: transparent;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #fff;
+  font-family: 'Orbitron', monospace;
+  box-sizing: border-box;
+}
+
+.project-banner img {
+  width: 100%;
+  height: 24rem;
+  object-fit: cover;
+  border-radius: 6rem;
+}
+
+.project-banner:hover{
+    transform: scale(1.01) ;
+    border-color: #00ffe7;
+    transition: transform 0.4s;
+}
+.project-search-bar {
+  width: 60vw;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  border: 2px solid #fff;
+  border-radius: 3rem;
+  background: transparent;
+  position: relative;
+  margin-bottom: 0.7rem;
+ 
+}
+
+.project-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.7rem 1.2rem;
+  font-family: 'Orbitron', monospace;
+}
+
+.project-search-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-right: 1.2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.project-search-underline {
+  width: 120px;
+  height: 6px;
+  background: #fff;
+  border-radius: 3px;
+  margin: 0.5rem auto 2.5rem auto;
+}
+
+.project-cards-row {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2.5rem;
+}
+
+.project-card {
+  width: 220px;
+  height: 220px;
+  border: 0.2px solid #ffffff2b;
+  border-radius: 0.5rem;
+  background: rgba(64, 224, 208, 0.062);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: transform 0.2s;
+}
+.project-card:hover {
+  transform: scale(1.04);
+  border-color: #00ffe7;
+}
+
+.project-card-img {
+  width: 80%;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 1.2rem;
+  filter: brightness(1.1) drop-shadow(0 0 2px #fff);
+}
+
+.project-card-title {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: 'Orbitron', monospace;
+  text-align: center;
+  margin-top: 0.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 2px #fff;
+} 

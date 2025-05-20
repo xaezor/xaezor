@@ -1,0 +1,170 @@
+.pfp {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  animation: float 3s ease-in-out infinite;
+  background: url('./img/X-removebg-preview.png') no-repeat center center;
+  background-size: contain;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 67%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  animation: cyberpunkText 0.1s linear infinite alternate;
+  background: url('./img/btnbg.png') no-repeat center center;
+  background-size: cover;
+  width: 200px;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fixed:hover {
+  opacity: 0.8;
+  transform: translateX(-50%) scale(1.05);
+  animation: none;
+}
+
+@keyframes cyberpunkText {
+  0% {
+    transform: translateX(-50%) translate(0, 0);
+  }
+  25% {
+    transform: translateX(-50%) translate(-5px, -5px);
+  }
+  50% {
+    transform: translateX(-50%) translate(5px, 5px);
+  }
+  75% {
+    transform: translateX(-50%) translate(-5px, 5px);
+  }
+  100% {
+    transform: translateX(-50%) translate(5px, -5px);
+  }
+}
+
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+  .pfp {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .fixed {
+    width: 220px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+}
+
+/* Medium screens (992px to 1199px) */
+@media (max-width: 1199px) {
+  .pfp {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .fixed {
+    width: 200px;
+    height: 75px;
+    font-size: 2rem;
+  }
+}
+
+/* Tablets (768px to 991px) */
+@media (max-width: 991px) {
+  .pfp {
+    width: 350px;
+    height: 350px;
+    top: 15%;
+  }
+  
+  .fixed {
+    width: 180px;
+    height: 65px;
+    font-size: 1.8rem;
+    top: 65%;
+  }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+  .pfp {
+    width: 300px;
+    height: 300px;
+    top: 20%;
+  }
+  
+  .fixed {
+    width: 160px;
+    height: 60px;
+    font-size: 1.6rem;
+    top: 63%;
+  }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .pfp {
+    width: 250px;
+    height: 250px;
+    top: 25%;
+  }
+  
+  .fixed {
+    width: 140px;
+    height: 50px;
+    font-size: 1.4rem;
+    top: 60%;
+  }
+}
+
+/* Small Mobile Devices (up to 375px) */
+@media (max-width: 375px) {
+  .pfp {
+    width: 200px;
+    height: 200px;
+    top: 30%;
+  }
+  
+  .fixed {
+    width: 120px;
+    height: 45px;
+    font-size: 1.2rem;
+    top: 58%;
+  }
+}

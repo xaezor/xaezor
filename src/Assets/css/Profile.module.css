@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext");
+html {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+@font-face {
+  font-family: 'Glitch'; /* Name to use in CSS */
+  src: url('./fonts/Sdglitchrobotdemo-GOPdO.ttf') format('truetype'); /* Path to font */
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: 'Glitch', sans-serif;
+  height: fit-content;
+  overflow-x: hidden;
+  display: flex;
+  font-size: max(calc(var(--_size) * 0.03), 10px);
+  --_factor: min(600px, 80vh);
+  --_size: min(var(--_factor), 80vw);
+}
+
+.profilePage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./img/hudbg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+}
+
+.fixed-button {
+  position: fixed;
+  top: 77%; /* Distance from top */
+  left: 17%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 2rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/btnbg.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 200px; /* Adjust width */
+  height: 75px; /* Adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.fixed-button:hover {
+    opacity: 0.8; /* Slight transparency effect */
+   filter: invert(1);
+}
+
+
+.pfp {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  padding: 12px 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 998;
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%; /* This is the magic property! */
+  overflow: hidden; /* Recommended for perfect circles */
+}
+
+.pfpx {
+  position: fixed;
+  top: 10%;
+  left: 15%;
+  padding: 12px 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%; /* This is the magic property! */
+  overflow: hidden; /* Recommended for perfect circles */
+}
+
+.pfparc {
+  position: fixed;
+  top: 6.5%;
+  left: 13%;
+  padding: 12px 20px;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000;
+  background: url('./img/pfborder.png') no-repeat center center;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50%; /* This is the magic property! */
+  overflow: hidden; /* Recommended for perfect circles */
+}
+
+.pfparc:hover{
+  transform: scale(1.05);
+  animation: rotate 1s linear infinite;
+}
+
+.fixed-button0 {
+  position: fixed;
+  top: 10%; /* Distance from top */
+  right: 17%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 4rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/namep.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 650px; /* Adjust width */
+  height: 100px; /* Adjust height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fixed-button0:hover{
+  transform: scale(1.05)
+}
+
+.fixed-button1 {
+  position: fixed;
+  top: 23%; /* Distance from top */
+  right: 39%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 2.3rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/namep.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 450px; 
+  height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fixed-button2 {
+  position: fixed;
+  top: 10%; /* Distance from top */
+  right: 7%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 2.3rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/namep.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 450px; 
+  height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fixed-button3 {
+  position: fixed;
+  top: 40%; /* Distance from top */
+  right: 17%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/hudcard.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 650px; 
+  height: 260px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.fixed-button4 {
+  position: fixed;
+  top: 85%; /* Distance from top */
+  right: 18%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/btnbg.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 150px; 
+  height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.fixed-button5 {
+  position: fixed;
+  top: 24%; /* Distance from top */
+  right: 11%; /* ✅ Leaves 10% margin from the right */
+  padding: 12px 20px;
+  font-size: 1.5rem;
+  font-family: Glitch;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensures it's above other elements */
+
+  /* ✅ Background Image */
+  background: url('./img/btnbg.png') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the button */
+  width: 150px; 
+  height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+@media (max-width: 1024px){
+.fixed-button0{
+  height: 2%;
+  width: 60%;
+  font-size: 27px;
+  top: 50%;
+}
+.fixed-button1{
+  height: 2%;
+  width: 60%;
+  font-size: 27px;
+  top: 58%;
+}
+.fixed-button2{
+  height: 2%;
+  width: 60%;
+  font-size: 27px;
+  top: 66%;
+}
+.fixed-button3{
+  height: 2%;
+  width: 60%;
+  font-size: 27px;
+  top: 74%;
+}
+.fixed-button{
+  width: 20%;
+  height: 2%;
+  font-size: 1rem;
+  top:85%;
+  left: 10%;
+}
+.pfp{
+width: 250px;
+height: 250px;
+left: 9%;
+top: 14%;
+}
+} 
