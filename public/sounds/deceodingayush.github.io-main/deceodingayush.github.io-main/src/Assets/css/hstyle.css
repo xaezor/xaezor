@@ -1,0 +1,558 @@
+@font-face {
+    font-family: 'Glitch'; /* Name to use in CSS */
+    src: url('./fonts/Sdglitchrobotdemo-GOPdO.ttf') format('truetype'); /* Path to font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Glitch', sans-serif;
+   background-image: url(./bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-attachment: fixed;
+    font-size: max(calc(var(--_size) * 0.03), 10px);
+    --_factor: min(600px, 80vh);
+    --_size: min(var(--_factor), 80vw);
+}
+
+
+
+/*----------------------------------------------- NAV BAR -------------------------------------------
+/* NAV BAR - Fixed at Bottom */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* ✅ Default navbar background with 50% opacity */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* NAVIGATION LINKS */
+.nav-bar a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 12px 20px;
+    transition: all 0.3s ease-in-out;
+    font-size: 2rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* ✅ Keeps text centered */
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* ✅ Fixed width */
+    height: 75px; /* ✅ Fixed height */
+}
+
+.nav-bar a::before{
+     filter: invert(1);
+}
+
+/* ✅ Background Image on Hover (No Size Change) */
+.nav-bar a:hover {
+    background: url('./img/btnbg.png') no-repeat center center;
+    background-size: contain; /* ✅ Keeps button size fixed */
+    background-position: center;
+    color: white; /* Keeps text visible */
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+   
+    /* transform: translateY(-3px); ✅ Slight hover lift effect */
+}
+
+
+
+/*------------------------------ NAV bAR enDS ------------------------------------------- */
+
+
+
+canvas#particleCanvas {
+    position: absolute; pointer-events: none;
+    animation: load 0.4s ease-in-out forwards;
+    z-index: 1;
+    width: 100%;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    max-height: 140px;
+    position: absolute; top: 16em;
+}
+
+.heroT {
+    position: absolute; left: 0; right: 0; margin: auto;
+    height: 20em;
+    padding-top: 2em;
+    translate: 0 -1.6em;
+    opacity: 0;
+    animation: load 2s ease-in-out 0.6s forwards;
+}
+@keyframes load {  
+    0% { opacity: 0;}    
+    100% { opacity: 1;}    
+}
+.heroT > h2 {
+    position: absolute;left: 0; right: 0; margin: auto;margin-top: 3%;
+    width: fit-content;
+    
+    font-size: 10rem;
+    font-weight: 600;
+    color: #9dc3f7;
+    background:
+    radial-gradient( 2em 2em at 50% 50%,
+        transparent calc(var(--p) - 2em),
+        #fff calc(var(--p) - 1em), 
+        #fff calc(var(--p) - 0.4em), 
+        transparent var(--p) 
+    ),
+    linear-gradient(0deg, #bad1f1 30%, #9dc3f7 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 16px rgba(174,207,242,.24);
+
+    --p:0%;
+    transition:--p 3s linear;
+    
+    animation: pulse 10s linear 1.2s infinite;
+}
+
+.heroT h2:nth-child(2) {
+    background:
+    radial-gradient( 2em 2em at 50% 50%,
+        transparent calc(var(--p) - 2em),
+        transparent calc(var(--p) - 1em),
+        #fff calc(var(--p) - 1em), 
+        #fff calc(var(--p) - 0.4em), 
+        transparent calc(var(--p) - 0.4em), 
+        transparent var(--p) 
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: blur(16px) opacity(0.4);
+}
+@keyframes pulse { 
+    0% { --p:0%; }
+    50% { --p:300%;}
+    100% { --p:300%;}
+}
+@property --p {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+@font-face {
+    font-family: 'Cyber'; /* Name to use in CSS */
+    src: url('./fonts/CyberwayRiders-lg97d.ttf') format('truetype'); /* Path to font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.heroP {
+    font-size: 1.2em;
+    font-family: Cyber;
+    position: absolute; left: 0; right: 0; top: 17em; margin: auto;
+    height: fit-content; width: fit-content; text-align: center;
+    opacity: 0;
+    translate: 0 1em;
+    animation: load 2s ease-out 2s forwards, up 1.4s ease-out 2s forwards;
+    color: #d8ecf8;
+    text-shadow: 0 2px 16px rgba(174,207,242,.24);
+    background: linear-gradient(0deg, #d8ecf8 0, #98c0ef 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+@keyframes up {      
+    100% { translate: 0; }    
+}
+
+.heroSubP {
+    position: absolute; left: 0; right: 0; top: 13em; margin: auto;
+    height: fit-content;
+    opacity: 0;
+    translate: 0 -1em;
+    animation: load3 2s ease-in 0s forwards, up 1.4s ease-out 0s forwards;
+}
+@keyframes load3 {  
+    0% { opacity: 0;}    
+    100% { opacity: 0.7;}    
+}
+.heroSubP p {
+    font-size: 1em;
+    position: relative; width: fit-content; margin: auto;
+    color: #d8ecf8;
+    text-shadow: 0 2px 16px rgba(174,207,242,.24);
+    background: linear-gradient(0deg, #d8ecf8 0, #98c0ef 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.heroSubP p::before,
+.heroSubP p::after {
+    position: absolute; top: 60%; 
+    display: block; content: '';
+    width: 5em; height: 1px;
+    opacity: 0;
+    animation: load2 1.4s ease-in-out 0s forwards, up 1.4s ease-out 0s forwards;
+}
+@keyframes load2 {  
+    0% { opacity: 0;}    
+    100% { opacity: 0.3;}    
+}
+.heroSubP p::before{
+    background: linear-gradient( -90deg, #9dc3f7 0%, transparent 100%);
+    right: 120%;
+    translate: -5em 0;
+}
+.heroSubP p::after {
+    background: linear-gradient( 90deg, #9dc3f7 0%, transparent 100%);
+    left: 120%;
+    translate: 5em 0;
+}
+
+.accent-lines {
+    pointer-events: none;
+    position: absolute; top: 0; left: 0; right: 0;
+    width: 100%; height: 42em;
+    z-index: -2;
+    --accent-lines-clr: rgba(186, 215, 247, .18);
+}
+.accent-lines > div {
+    position: absolute; top: 0; right: 0; left: 0; margin: auto;
+    height: 100%; width: 100%;
+}
+.accent-lines > div:nth-child(1) > div{
+    position: absolute; top: 0; right: 0; left: 0; margin: auto;
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-lines-clr), transparent);
+    opacity: 0; scale: 0;
+    animation: accentload 2s ease-out 2.4s forwards;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(1){ top: 6em; }
+.accent-lines > div:nth-child(1) > div:nth-child(2){ top: 11em; }
+.accent-lines > div:nth-child(1) > div:nth-child(3){ top: 16em; }
+.accent-lines > div:nth-child(1) > div:nth-child(4){ top: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(5){ top: 29em; }
+.accent-lines > div:nth-child(2) > div{
+    position: absolute; top: 0; right: 0; left: 0; margin: auto;
+    width: 1px; height: 100%;
+    background: var(--accent-lines-clr);
+}
+@keyframes accentload {
+    0% {
+        opacity: 0; scale: 0;
+    }
+    100% {
+        opacity: 1; scale: 1;
+    }
+}
+
+.accent-lines > div:nth-child(2) > div {
+    opacity: 0; scale: 0;
+    animation: accentload 2s ease-out 2s forwards;
+}
+.accent-lines > div:nth-child(2) > div:nth-child(1){ left: 24em; }
+.accent-lines > div:nth-child(2) > div:nth-child(2){ left: 34em; }
+.accent-lines > div:nth-child(2) > div:nth-child(3){ right: 24em; }
+.accent-lines > div:nth-child(2) > div:nth-child(4){ right: 34em; }
+
+.accent-lines > div:nth-child(1) > div::before, 
+.accent-lines > div:nth-child(1) > div::after { 
+    content: ''; display: none; position: absolute;
+    width: 0.2em; height: 0.2em; border-radius: 1em;
+    background: #9dc3f7;
+    left: 0; right: 0; margin: auto;
+    translate: 0 -1px;
+
+    opacity: 0; scale: 0;
+    animation: accentload 2s ease-out 4.4s forwards;
+}
+
+.accent-lines > div:nth-child(1) > div:nth-child(3)::before{ display: block; left: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(3)::after{ display: block; right: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(4)::before{ display: block; left: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(4)::after{ display: block; right: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(5)::before{ display: block; left: 24em; }
+.accent-lines > div:nth-child(1) > div:nth-child(5)::after{ display: block; right: 24em; }
+
+.accent-lines > div:nth-child(1) > div:nth-child(2)::before,
+.accent-lines > div:nth-child(1) > div:nth-child(2)::after{ 
+    display: block; width: 5em; height: 1px; border-radius: 0; opacity: 0.12;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(2)::before{
+    right: 24em; rotate: 45deg; translate: -2.5em 2.5em;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(2)::after{
+    right: 24em; rotate: -45deg; translate: -2.5em 2.5em;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(1)::before,
+.accent-lines > div:nth-child(1) > div:nth-child(1)::after{ 
+    display: block; width: 5em; height: 1px; border-radius: 0; opacity: 0.12;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(1)::before{
+    left: 24em; rotate: 45deg; translate: 2.5em 7.5em;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(1)::after{
+    left: 24em; rotate: -45deg; translate: 2.5em 7.5em;
+}
+
+.accent-lines > div:nth-child(1) > div:nth-child(2)::before,
+.accent-lines > div:nth-child(1) > div:nth-child(2)::after {
+    opacity: 0; scale: 0;
+    animation: accentload2 2s ease-out 2.4s forwards;
+}
+.accent-lines > div:nth-child(1) > div:nth-child(1)::before,
+.accent-lines > div:nth-child(1) > div:nth-child(1)::after {
+    opacity: 0; scale: 0;
+    animation: accentload3 2s ease-out 2.4s forwards;
+} 
+@keyframes accentload2 {
+    0% {
+        opacity: 0; scale: 0; transform: rotate(360deg);
+    }
+    50% { scale: 0; }
+    100% {
+        opacity: 0.12; scale: 1; transform: rotate(0deg);
+    }
+}
+@keyframes accentload3 {
+    0% {
+        opacity: 0; scale: 0; transform: rotate(-360deg);
+    }
+    50% { scale: 0; }
+    100% {
+        opacity: 0.12; scale: 1; transform: rotate(0deg);
+    }
+}
+
+
+.hero-spacer {
+    height: 40em;
+    pointer-events: none;
+}
+
+.content-section {
+    position: relative;
+    z-index: 1112;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 16em 0 12em 0;
+    overflow: hidden;
+}
+
+.content-section p.subt {
+    color: #d8ecf8be;
+    font-size: 2em;
+    font-weight: 200;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+.content-section h3 {
+    margin: 0.4em 0 0.6em 0;
+    font-size: 2.3em;
+    font-weight: 600;
+    color: #d8ecf8;
+    text-shadow: 0 2px 16px rgba(174,207,242,.24);
+    background: linear-gradient(0deg, #d8ecf8 0, #98c0ef 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.content-section p.subp {
+    color: #d8ecf8be;
+    font-size: 1em;
+    font-weight: 400;
+    max-width: 26em;
+    margin: auto;
+}
+
+.content-section p.subt::before,
+.content-section p.subt::after {
+    position: absolute; top: 60%; 
+    display: block; content: '';
+    width: 5em; height: 1px;
+    opacity: 0.5;
+}
+.content-section p.subt::before{
+    background: linear-gradient( -90deg, #9dc3f7 0%, transparent 100%);
+    right: 120%;
+    top: 50%;
+}
+.content-section p.subt::after {
+    background: linear-gradient( 90deg, #9dc3f7 0%, transparent 100%);
+    left: 120%;
+    top: 50%;
+}
+
+.content-section .content-acc {
+    position: absolute;
+    left: 0; right: 0; top: 25%; margin: auto;
+    display: flex; justify-content: center;
+}
+.content-section .content-acc div{
+    width: 10em; height: 10em;
+    border-radius: 50%;
+    box-shadow: 
+    -1em -0.2em 0.4em -1.1em #c2ccff,
+    inset 0em 0em 0em 2px #c2ccff,
+    inset 0.2em 0.3em 0.2em -0.2em #c2ccff,
+    inset -1.2em 2.3em 2em -0.5em #d4e6ff2f;
+    background: #121521;
+    z-index: 1;
+    filter: brightness(0.8);
+    background: repeating-radial-gradient( at 50% 50%, transparent 0%, #c2ccff22 2px, transparent 4px);
+    translate: -18em;
+}
+.content-section .content-acc div:nth-child(2){
+    translate: 18em 12em;
+    border-radius: 2em;
+    box-shadow: 
+    -1em -0.2em 0.4em -1.1em #c2ccff,
+    inset 0em 0em 0em 2px #c2ccff,
+    inset 0.2em 0.3em 0.2em -0.2em #c2ccff,
+    inset 10.8em 11.3em 2em -10.5em #d4e6ff2f;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+
+/* -------------------------------BG VDO------------------------------------- */
+
+/* Background Video */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100vw;
+    min-height: 100vh;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures full-screen coverage */
+    z-index: -1;
+    transition: filter 0.5s ease-in-out; /* Smooth blur transition */
+}
+
+/* Add blur class (This will be toggled using JS) */
+.bg-blur {
+    filter: blur(10px); /* ✅ Blur effect when scrolling */
+}
+
+
+
+/* ----------------------------------about button-------------------------------------------------- */
+
+  .fixed-button {
+    position: fixed;
+    top: 10px; /* Distance from top */
+    right: 10%; /* ✅ Leaves 10% margin from the right */
+    padding: 12px 20px;
+    font-size: 2rem;
+    font-family: Glitch;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Ensures it's above other elements */
+
+    /* ✅ Background Image */
+    background: url('./img/btnbg.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    width: 200px; /* Adjust width */
+    height: 75px; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hover Effect */
+.fixed-button:hover {
+    opacity: 0.8; /* Slight transparency effect */
+   filter: invert(1);
+}
+
+/* ------------------Donate------------------ */
+
+
+.donate {
+    position: fixed;
+    top: 10px; /* Distance from top */
+    left: 10%; /* ✅ Leaves 10% margin from the right */
+    padding: 12px 20px;
+    font-size: 2rem;
+    font-family: Glitch;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Ensures it's above other elements */
+
+    /* ✅ Background Image */
+    background: url('./img/btnbg.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    width: 200px; /* Adjust width */
+    height: 75px; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hover Effect */
+.donate:hover {
+    opacity: 0.8; /* Slight transparency effect */
+   filter: invert(1);
+}
+
+
+
+/* --------------------------------- */
+
+@media (max-width: 1024px){
+    h2{
+        top: 120%;
+    }
+   *{
+    font-size: 1.2rem;
+   }
+   .heroP{
+    font-size: 1.7rem;
+    top: 50%;
+   }
+   .donate {
+    top: 3%;
+}
+.fixed-button{
+    top: 3%;
+}
+}

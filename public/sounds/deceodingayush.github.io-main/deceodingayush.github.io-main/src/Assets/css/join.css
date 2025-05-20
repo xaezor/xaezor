@@ -1,0 +1,101 @@
+
+  .pfp {
+    position: fixed;
+    top: 10%; /* Distance from top */
+    left: 37%;
+     /* ✅ Leaves 10% margin from the right */
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Ensures it's above other elements */
+    animation: float 3s ease-in-out infinite;
+    /* ✅ Background Image */
+    background: url('./img/X-removebg-preview.png') no-repeat center center;
+    background-size: contain; /* Ensures the image covers the button */
+    width: 400px; /* Adjust width */
+    height: 400px; /* Adjust height */
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves up */
+    }
+    100% {
+        transform: translateY(0); /* Back to original position */
+    }
+}
+  
+.fixed{
+    position: fixed;
+    top: 67%; /* Distance from top */
+    left: 43%; /* ✅ Leaves 10% margin from the right */
+    font-size: 2rem;
+    font-family: Glitch;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Ensures it's above other elements */
+    animation: cyberpunkText 0.1s linear infinite alternate;
+    /* ✅ Background Image */
+    background: url('./img/btnbg.png') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the button */
+    width: 200px; /* Adjust width */
+    height: 75px; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .fixed:hover {
+      opacity: 0.8; /* Slight transparency effect */
+      scale: 1.05;
+      animation: none;
+  }
+
+  @keyframes cyberpunkText {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(-5px, -5px); /* Move up-left */
+    }
+    50% {
+        transform: translate(5px, 5px); /* Move down-right */
+    }
+    75% {
+        transform: translate(-5px, 5px); /* Move down-left */
+    }
+    100% {
+        transform: translate(5px, -5px); /* Move up-right */
+    }
+}
+
+
+@media (max-width: 1024px){
+ .pfp{
+    left : 30%;
+    height: 1200px;
+    width: 400px;
+ }
+ .fixed{
+    width: 400px; /* Adjust width */
+    height: 150px;
+    left: 30%;
+ }
+   *{
+    font-size: 1.2rem;
+   }
+   .donate {
+    top: 3%;
+}
+.fixed-button{
+    top: 3%;
+}
+}

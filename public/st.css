@@ -1,0 +1,10 @@
+@media screen and (max-width: 480px) {
+    .donate{
+      height: 45px;
+      width: 140px;
+    }
+    .header-container h2{
+        width: 140px;
+        height: 45px;
+    }
+  }
